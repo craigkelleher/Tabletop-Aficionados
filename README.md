@@ -10,4 +10,4 @@ Grading:
 - 0.6 points- explanations on action taken or not taken on fixes
 - 0.6 points- includes Static HTML pages for all project functionalities in terms relevant to database.
 - for exampe: on final submission "Add entries to each table" could be "Add a new boardgame title"
-2.4 points for writeup/submission, .6points for HTML coding.
+- 2.4 points for writeup/submission, .6points for HTML coding.
