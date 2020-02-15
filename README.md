@@ -1,4 +1,4 @@
-#Welcome to the Tabletop Aficionados Website
+Welcome to the Tabletop Aficionados Website
 
 Current Project Steps To complete:
 - Project Step 3 Final Version:
