@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>
+            Boardgames Information Page
+        </title>
+        <meta charset="UTF-8">
+        <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
+            the webpage itself to be scaled for all device resolutions-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <!--Ref:https://www.w3schools.com/howto/howto_website.asp; Horizontal navigation bar with links to other
+            pages-->
+        <div class="menubar">
+             <a href = "home.html">Home</a>
+             <a href = "boardgames.html">Boardgames</a>
+             <a href = "users.html">User Info</a>
+        </div> 
+        <div class = "header">
+            <h1>BOARDGAMES INFORMATION PAGE</h1>
+            <p>Here you can view the reviews and description of various boardgames or even post your own!</p>
+        </div>
+        <br/>
+        <div class="set">
+            <h2>Boardgame Description:</h2>
+            <form>
+                Boardgame Name:<br>
+                <input type="text" name="boardgamename"><br>
+                Publisher:
+                <input type="text" name="publisher"><br>
+                Designer:
+                <input type="text" name="designer"><br>
+                Release Date:
+                <input type="date" name="releasedate"><br>
+                Genre:<br>
+                <select name="genres">
+                    <option value="family">Family</option>
+                    <option value="dexterity">Dexterity</option>
+                    <option value="party">Party</option>
+                    <option value="abstract">Abstracts</option>
+                    <option value="thematic">Thematic</option>
+                    <option value="eurogames">Eurogames</option>
+                    <option value="wargames">Wargames</option>
+                </select>    
+                Rating:<br>
+                <input type="number" name="rating"></br>
+            </form>
+            <br/>
+        </div>
+        <div class="set">
+            <h2>Submit Review</h2>
+            <form>
+                Username:<br>
+                <p>
+                    <label>Review:</label>
+                    <input type="text" name="username"><br>
+                </p>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="set">
+            <h2>Submit New Boardgame Information</h2>
+            <form>
+                Boardgame Name:<br>
+                <input type="text" name="boardgamename"><br>
+                Publisher:
+                <input type="text" name="publisher"><br>
+                Designer:
+                <input type="text" name="designer"><br>
+                Release Date:
+                <input type="date" name="releasedate"><br>
+                Genre:<br>
+                <select name="genres">
+                    <option value="family">Family</option>
+                    <option value="dexterity">Dexterity</option>
+                    <option value="party">Party</option>
+                    <option value="abstract">Abstracts</option>
+                    <option value="thematic">Thematic</option>
+                    <option value="eurogames">Eurogames</option>
+                    <option value="wargames">Wargames</option>
+                </select>
+            </form>        
+        </div>
+    </body>
+</html>

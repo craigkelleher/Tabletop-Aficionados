@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>
+            Users Page
+        </title>
+        <meta charset="UTF-8">
+        <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
+            the webpage itself to be scaled for all device resolutions-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <!--Ref:https://www.w3schools.com/howto/howto_website.asp; Horizontal navigation bar with links to other
+            pages-->
+        <div class="menubar">
+             <a href = "index.html">Home</a>
+             <a href = "boardgames.html">Boardgames</a>
+             <a href = "users.html">User info</a>
+        </div> 
+        <div class = "header">
+            <h1>Users Information</h1>
+            <p>Information is displayed here about your account</p>
+        </div>
+        <br/>
+        <div class="set">
+            <h2>Account Information:</h2>
+            <form>
+                First Name:<br>
+                <input type="text" name="firstname"><br>
+                Last Name:<br>
+                <input type="text" name="lastname"><br>
+                Email:<br>
+                <input type="email" name="email"></br>
+                Number of Reviewed Games:
+                <input type="number" name="reviews">
+            </form>
+        </div>
+    </body>
+</html>

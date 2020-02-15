@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>
+            Home Page
+        </title>
+        <meta charset="UTF-8">
+        <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
+            the webpage itself to be scaled for all device resolutions-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <!--Ref:https://www.w3schools.com/howto/howto_website.asp; Horizontal navigation bar with links to other
+            pages-->
+        <div class="menubar">
+             <a href = "index.html">Home</a>
+             <a href = "boardgames.html">Boardgames</a>
+             <a href = "users.html">User info</a>
+        </div> 
+        <div class = "header">
+            <h1>TABLETOP AFICIONADOS</h1>
+            <p>A site to search and rate various tabletop boardgames from our database</p>
+        </div>
+        <br/>
+        <div class="set">
+            <h2>Sign Up</h2>
+            <form>
+                First Name:<br>
+                <input type="text" name="firstname"><br>
+                Last Name:<br>
+                <input type="text" name="lastname"><br>
+                Email:<br>
+                <input type="email" name="email"></br>
+            </form>
+            <br/>
+        </div>
+        <div class = "set">
+            <h2>BOARDGAME REVIEWS</h2>
+            <p>Here you can search the reviews of various boardgames or even post your own!</p>
+        </div>
+        <br/>
+        <div class="set">
+            <h2>Search Boardgame</h2>
+            <form action="">
+                Boardgame Name:<br>
+                <input type="text" name="boardgamename"><br>
+                Publisher:
+                <input type="text" name="publisher"><br>
+                Genre:<br>
+                <select name="genres">
+                    <option value="family">Family</option>
+                    <option value="dexterity">Dexterity</option>
+                    <option value="party">Party</option>
+                    <option value="abstract">Abstracts</option>
+                    <option value="thematic">Thematic</option>
+                    <option value="eurogames">Eurogames</option>
+                    <option value="wargames">Wargames</option>
+                <button type="submit">Submit</button>
+            </form>
+            <br/>
+        </div>
+    </body>
+</html>
