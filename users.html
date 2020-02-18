@@ -2,6 +2,7 @@
 <html lang= "en">
     <head>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
         <title>
             Users Page
         </title>
@@ -15,25 +16,35 @@
             pages-->
         <div class="menubar">
              <a href = "index.html">Home</a>
-             <a href = "boardgames.html">Boardgames</a>
-             <a href = "users.html">User info</a>
+             <a href = "boardgames.html">Browse</a>
+             <a href = "users.html">User Sign Up</a>
+             <a href = "account.html">My Account</a>
+             <a href = "postgame.html">Post Game</a>
         </div> 
-        <div class = "header">
-            <h1>Users Information</h1>
-            <p>Information is displayed here about your account</p>
+        <div class = "header_user">
+            <h1>User Sign Up Information</h1>
+            <p>Please enter in your informastion below in order to create an account</p>
         </div>
         <br/>
-        <div class="set">
-            <h2>Account Information:</h2>
+        <div class="setA">
+            <h2>Create Account:</h2>
             <form>
                 First Name:<br>
-                <input type="text" name="firstname"><br>
+                <input type = "text" name="firstname"><br>
+                <br>
                 Last Name:<br>
-                <input type="text" name="lastname"><br>
+                <input type = "text" name="lastname"><br>
+                <br>
+                Username:<br>
+                <input type="text" name="username"><br>
+                <br>
                 Email:<br>
-                <input type="email" name="email"></br>
-                Number of Reviewed Games:
-                <input type="number" name="reviews">
+                <input type = "email" name="email"><br>
+                <br>
+                Pass:<br>
+                <input type = "password" name="password"><br>
+                <br>
+                <button type="submit">Submit Form</button>
             </form>
         </div>
     </body>
