@@ -2,8 +2,9 @@
 <html lang= "en">
     <head>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
         <title>
-            Boardgames Information Page
+            Boardgames Search Page
         </title>
         <meta charset="UTF-8">
         <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
@@ -14,26 +15,35 @@
         <!--Ref:https://www.w3schools.com/howto/howto_website.asp; Horizontal navigation bar with links to other
             pages-->
         <div class="menubar">
-             <a href = "home.html">Home</a>
-             <a href = "boardgames.html">Boardgames</a>
-             <a href = "users.html">User Info</a>
+             <a href = "index.html">Home</a>
+             <a href = "boardgames.html">Browse</a>
+             <a href = "users.html">User Sign Up</a>
+             <a href = "account.html">My Account</a>
+             <a href = "postgame.html">Post Game</a>
         </div> 
-        <div class = "header">
-            <h1>BOARDGAMES INFORMATION PAGE</h1>
-            <p>Here you can view the reviews and description of various boardgames or even post your own!</p>
+        <div class = "header_search">
+            <h1>BOARDGAMES SEARCH</h1>
+            <p>Search for your favorite tabletop game and the information/reviews associated with it!</p>
         </div>
         <br/>
-        <div class="set">
-            <h2>Boardgame Description:</h2>
-            <form>
+        <div class="setA">
+            <h2>Boardgame Filters:</h2>
+            <form action="tabletopinfo.html">
                 Boardgame Name:<br>
                 <input type="text" name="boardgamename"><br>
-                Publisher:
-                <input type="text" name="publisher"><br>
-                Designer:
+                <br>
+                Publisher First Name:<br>
+                <input type="text" name="publisherFN"><br>
+                <br>
+                Publisher Last Name:<br>
+                <input type="text" name="publisherLN"><br>
+                <br>
+                Designer:<br>
                 <input type="text" name="designer"><br>
-                Release Date:
+                <br>
+                Release Date:<br>
                 <input type="date" name="releasedate"><br>
+                <br>
                 Genre:<br>
                 <select name="genres">
                     <option value="family">Family</option>
@@ -43,34 +53,30 @@
                     <option value="thematic">Thematic</option>
                     <option value="eurogames">Eurogames</option>
                     <option value="wargames">Wargames</option>
-                </select>    
-                Rating:<br>
-                <input type="number" name="rating"></br>
-            </form>
-            <br/>
-        </div>
-        <div class="set">
-            <h2>Submit Review</h2>
-            <form>
-                Username:<br>
-                <p>
-                    <label>Review:</label>
-                    <input type="text" name="username"><br>
-                </p>
-                <button type="submit">Submit</button>
+                </select> 
+                <br>
+                <br>
+                <button type="submit">Search</button>
+                <br>
+                <br>   
             </form>
         </div>
-        <div class="set">
+        <br>
+        <div class="setA">
             <h2>Submit New Boardgame Information</h2>
             <form>
                 Boardgame Name:<br>
                 <input type="text" name="boardgamename"><br>
-                Publisher:
+                <br>
+                Publisher:<br>
                 <input type="text" name="publisher"><br>
-                Designer:
+                <br>
+                Designer:<br>
                 <input type="text" name="designer"><br>
-                Release Date:
+                <br>
+                Release Date:<br>
                 <input type="date" name="releasedate"><br>
+                <br>
                 Genre:<br>
                 <select name="genres">
                     <option value="family">Family</option>
@@ -80,7 +86,9 @@
                     <option value="thematic">Thematic</option>
                     <option value="eurogames">Eurogames</option>
                     <option value="wargames">Wargames</option>
-                </select>
+                </select><br>
+                <br>
+                <button type="submit">Submit</button>
             </form>        
         </div>
     </body>

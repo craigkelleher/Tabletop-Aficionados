@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <title>
+            Account
+        </title>
+        <meta charset="UTF-8">
+        <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
+            the webpage itself to be scaled for all device resolutions-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="menubar">
+            <a href = "index.html">Home</a>
+            <a href = "boardgames.html">Browse</a>
+            <a href = "users.html">User Sign Up</a>
+            <a href = "account.html">My Account</a>
+            <a href = "postgame.html">Post Game</a>
+       </div> 
+       <div class = "header_account">
+        <h1>Account Information</h1>
+        <p>Your account information and reviews you made are here</p>
+       </div>
+       <br>
+       <div class="set">
+        <h2>Create Account:</h2>
+        <form>
+            First Name:<br>
+            <input type = "text" name="firstname">
+            <button type="button" name="update">Update</button><br>
+            Last Name:<br>
+            <input type = "text" name="lastname">
+            <button type="button" name="update">Update</button><br>
+            Username:<br>
+            <input type="text" name="username">
+            <button type="button" name="update">Update</button><br>
+            Email:<br>
+            <input type = "email" name="email">
+            <button type="button" name="update">Update</button><br>
+            Pass:<br>
+            <input type = "password" name="password">
+            <button type="button" name="update">Update</button><br>
+        </form>
+      </div>  
+      <div class="set">
+            <h2>Your Reviews:</h2>
+            <form id="reviewform">
+                BoardGame:<br>
+                <input type="text" name="boardgame"><br>
+                Rating:<br>
+                <input type="number" name="rating">
+                <button type="button" name="update">Update</button><br>
+                <textarea id="review" rows="10" cols="80" name="review" form="reviewform">
+                Enter review here...
+                </textarea><br>
+                <button type="button" name="update">Update</button><br>
+                <br>
+                <button type="button" name="delete">Delete Review</button>
+            </form>  
+       </div>
