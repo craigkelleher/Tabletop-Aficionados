@@ -2,13 +2,10 @@ Welcome to the Tabletop Aficionados Website
 https://craigkelleher.github.io/Tabletop-Aficionados/
 
 Current Project Steps To complete:
-- Project Step 3 Final Version:
+- Project Step 4 Draft Version: DML and DDL Queries
 
 Grading:
-- 0.6 points- Proper Zip archive with PDF file and URL
-- 0.6 points- Correctly updates outline, overview, ERD, and Schema according to course concepts
-- 0.6 points- Fixes based on feedback
-- 0.6 points- explanations on action taken or not taken on fixes
-- 0.6 points- includes Static HTML pages for all project functionalities in terms relevant to database.
-- for exampe: on final submission "Add entries to each table" could be "Add a new boardgame title"
-- 2.4 points for writeup/submission, .6points for HTML coding.
+- 3 Points just for turning in the work
+
+Submission:
+- Post a ZiP file of Data Definition Queries + Sample Data and the URL in the discussion post for Project Step 4 Draft Version
