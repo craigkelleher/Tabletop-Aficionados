@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: classmysql.engr.oregonstate.edu:3306
--- Generation Time: Feb 24, 2020 at 08:24 PM
+-- Generation Time: Feb 24, 2020 at 08:34 PM
 -- Server version: 10.4.11-MariaDB-log
 -- PHP Version: 7.0.33
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `Boardgames`
 --
 
+DROP TABLE IF EXISTS `Boardgames`;
 CREATE TABLE `Boardgames` (
   `boardgameID` int(11) NOT NULL,
   `boardgameName` varchar(255) NOT NULL,
@@ -51,6 +52,7 @@ INSERT INTO `Boardgames` (`boardgameID`, `boardgameName`, `designerID`, `publish
 -- Table structure for table `PrimaryDesigners`
 --
 
+DROP TABLE IF EXISTS `PrimaryDesigners`;
 CREATE TABLE `PrimaryDesigners` (
   `designerID` int(11) NOT NULL,
   `designerFirstName` varchar(255) NOT NULL,
@@ -71,6 +73,7 @@ INSERT INTO `PrimaryDesigners` (`designerID`, `designerFirstName`, `designerLast
 -- Table structure for table `PrimaryPublishers`
 --
 
+DROP TABLE IF EXISTS `PrimaryPublishers`;
 CREATE TABLE `PrimaryPublishers` (
   `publisherID` int(11) NOT NULL,
   `publisherName` varchar(255) NOT NULL,
@@ -91,6 +94,7 @@ INSERT INTO `PrimaryPublishers` (`publisherID`, `publisherName`, `gamesPublished
 -- Table structure for table `Users`
 --
 
+DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users` (
   `userID` int(11) NOT NULL,
   `userFirstName` varchar(255) NOT NULL,
@@ -113,6 +117,7 @@ INSERT INTO `Users` (`userID`, `userFirstName`, `userLastName`, `email`) VALUES
 -- Table structure for table `UsersBoardgames`
 --
 
+DROP TABLE IF EXISTS `UsersBoardgames`;
 CREATE TABLE `UsersBoardgames` (
   `userID` int(11) NOT NULL,
   `boardgameID` int(11) NOT NULL
