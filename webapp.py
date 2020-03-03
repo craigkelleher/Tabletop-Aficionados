@@ -3,7 +3,7 @@ from flask import request, redirect
 from db_connector.db_connector import connect_to_database, execute_query
 webapp=Flask(__name__)
 
-app.config['MYSQL_DATABASE_USER'] = 'username'
+app.config['MYSQL_DATABASE_USER'] = 'cs340_kellehec'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
 app.config['MYSQL_DATABASE_DB'] = 'cs340_kellehec'
 app.config['MYSQL_DATABASE_host'] = ' '
