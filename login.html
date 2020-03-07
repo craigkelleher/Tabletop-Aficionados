@@ -2,10 +2,9 @@
 <html lang= "en">
     <head>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
         <title>
-            Write Review
+            Account
         </title>
         <meta charset="UTF-8">
         <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
@@ -21,22 +20,19 @@
             <a href = "postgame.html">Post Game</a>
             <a href = "login.html">Login</a>
        </div> 
-       <div class = "header_post">
-        <h1>Write a Review</h1>
-        <p>Post a review on your tabletop game here</p>
+       <div class = "header_account">
+        <h1>Login</h1>
+        <p>Login into your account here!</p>
        </div>
        <br>
-       <div class="setB">
-        <form id="reviewform">
-            Rating:<br>
+       <div class="set">
+           <form id = "login_form" action = "/login" method = "POST">
+            Username:<br>
+            <input type = "text" name="username" required>
             <br>
-            <input type="number" name="rating"><br>
-            <textarea id="review" rows="10" cols="80" name="review" form="reviewform">
-                Enter review here...
-            </textarea><br>
-            <button type="submit">Submit Review</button>
-        </form>  
+            Password:<br>
+            <input type = "text" name="password" required><br>
+            <br>
+            <button type = "button" name = "login_button">Login</button><br>
+           </form>
        </div>
-       <br>  
-    </body>
-</html>    

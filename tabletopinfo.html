@@ -19,6 +19,7 @@
             <a href = "users.html">User Sign Up</a>
             <a href = "account.html">My Account</a>
             <a href = "postgame.html">Post Game</a>
+            <a href = "login.html">Login</a>
        </div> 
        <div class = "header_search">
            <h1>BOARDGAMES INFORMATION</h1>
@@ -31,15 +32,15 @@
         <h2>Boardgame Information:</h2>
         <form id="boardgameform">
             Boardgame Name:<br>
-            <input type="text" name="boardgamename"><br>
-            Publisher First Name:<br>
-            <input type="text" name="publisherFN"><br>
-            Publisher Last Name:<br>
-            <input type="text" name="publisherLN"><br>
-            Designer:<br>
-            <input type="text" name="designer"><br>
+            <input type = "text" name="boardgamename" value = "{{game[0]}}"><br>
+            Designer First Name:<br>
+            <input type="text" name="designerFN" value = "{{game[1]}}"><br>
+            Designer Last Name:<br>
+            <input type="text" name="designerLN" value = "{{game[2]}}"><br>
+            Publisher:<br>
+            <input type="text" name="publisher" value = "{{game[3]}}"><br>
             Release Date:<br>
-            <input type="date" name="releasedate"><br>
+            <input type="date" name="releasedate" value = "{{game[4]}}"><br>
             Genre:<br>
             <select name="genres">
                 <option value="family">Family</option>
@@ -84,3 +85,4 @@
           </textarea>
       </div>
     </body>
+</html>    
