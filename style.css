@@ -12,7 +12,7 @@ h1 {
   .header_home {
     padding: 70px; 
     text-align: center; 
-    background-image: url(chess.jpg); 
+    background-image: url(images/chess.jpg); 
     color: #0099ff;
   }
 
@@ -82,7 +82,7 @@ h1 {
 
   .set {    
       margin: auto;
-      padding: 20px;
+      padding: 60px;
       background-color: #ffcc00;
   }
 

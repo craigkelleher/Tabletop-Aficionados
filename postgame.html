@@ -20,6 +20,7 @@
              <a href = "users.html">User Sign Up</a>
              <a href = "account.html">My Account</a>
              <a href = "postgame.html">Post Game</a>
+             <a href = "login.html">Login</a>
         </div> 
         <div class = "header_post">
             <h1>POST BOARDGAME</h1>
@@ -28,18 +29,18 @@
         <br/>
         <div class="set">
             <h2>Boardgame Information:</h2>
-        <form id="boardgameform">
+        <form id="boardgameform" action = "/add_boardgames" method = "POST">
             Boardgame Name:<br>
             <input type="text" name="boardgamename"><br>
             <br>
-            Publisher First Name:<br>
-            <input type="text" name="publisherFN"><br>
+            Designer First Name:<br>
+            <input type="text" name="designerFN"><br>
             <br>
             Publisher Last Name:<br>
-            <input type="text" name="publisherLN"><br>
+            <input type="text" name="designerLN"><br>
             <br>
-            Designer:<br>
-            <input type="text" name="designer"><br>
+            Publisher:<br>
+            <input type="text" name="publisher"><br>
             <br>
             Release Date:<br>
             <input type="date" name="releasedate"><br>
@@ -61,3 +62,20 @@
             </textarea><br>
             <button type="submit">Submit</button>      
         </div>
+        <br>
+        <div class="set">
+            <h2>Publisher Information:</h2>
+        <form id="publisherform" action = "/add_publisher" method = "POST">
+            Publisher Name:<br>
+            <input type="text" name="publisher"><br>
+            <br>
+            Founding Date:<br>
+            <input type="date" name="foundingdate"><br>
+            <br>
+            Games Published:<br>
+            <input type="number" name="gamespublished"><br>
+            <br>
+            <button type="submit">Submit</button>      
+        </div>
+    </body> 
+</html>           

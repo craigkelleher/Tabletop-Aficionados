@@ -20,6 +20,7 @@
              <a href = "users.html">User Sign Up</a>
              <a href = "account.html">My Account</a>
              <a href = "postgame.html">Post Game</a>
+             <a href = "login.html">Login</a>
         </div> 
         <div class = "header_search">
             <h1>BOARDGAMES SEARCH</h1>
@@ -28,18 +29,18 @@
         <br/>
         <div class="setA">
             <h2>Boardgame Filters:</h2>
-            <form action="tabletopinfo.html">
+            <form id = "game_search" action="/add_boardgames" method = "GET">
                 Boardgame Name:<br>
                 <input type="text" name="boardgamename"><br>
                 <br>
-                Publisher First Name:<br>
-                <input type="text" name="publisherFN"><br>
+                Designer First Name:<br>
+                <input type="text" name="designerFN"><br>
                 <br>
-                Publisher Last Name:<br>
-                <input type="text" name="publisherLN"><br>
+                Designer Last Name:<br>
+                <input type="text" name="designerLN"><br>
                 <br>
-                Designer:<br>
-                <input type="text" name="designer"><br>
+                Publisher:<br>
+                <input type="text" name="publisher"><br>
                 <br>
                 Release Date:<br>
                 <input type="date" name="releasedate"><br>
@@ -61,6 +62,5 @@
                 <br>   
             </form>
         </div>
-        <br>
-    </body>
+    </body>    
 </html>

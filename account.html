@@ -18,6 +18,7 @@
             <a href = "users.html">User Sign Up</a>
             <a href = "account.html">My Account</a>
             <a href = "postgame.html">Post Game</a>
+            <a href = "login.html">Login</a>
        </div> 
        <div class = "header_account">
         <h1>Account Information</h1>
@@ -25,38 +26,37 @@
        </div>
        <br>
        <div class="set">
-        <h2>Login to Your Account:</h2>
-        <form>
+        <h2>Your Account:</h2>
+        <form id = "update_account" action = "/update_account" method = "POST">
+            <input type="hidden" name="user_id" value ="{{account[0]}}">
             First Name:<br>
-            <input type = "text" name="firstname">
-            <button type="button" name="update">Update</button><br>
+            <input type = "text" name="firstname" value = "{{account[1]}}"><br>
             Last Name:<br>
-            <input type = "text" name="lastname">
-            <button type="button" name="update">Update</button><br>
+            <input type = "text" name="lastname" value = "{{account[2]}}"><br>
             Username:<br>
-            <input type="text" name="username">
-            <button type="button" name="update">Update</button><br>
+            <input type="text" name="username" value = "{{account[4]}}"><br>
             Email:<br>
-            <input type = "email" name="email">
-            <button type="button" name="update">Update</button><br>
+            <input type = "email" name="email" value = "{{account[3]}}"><br>
             Pass:<br>
-            <input type = "password" name="password">
+            <input type = "password" name="password" value = "{{account[5]}}"><br>
+            <br>
             <button type="button" name="update">Update</button><br>
         </form>
-      </div>  
+      </div> 
+      {% for r in ratings %}
       <div class="set">
             <h2>Your Reviews:</h2>
-            <form id="reviewform">
+            <form id="reviewform" action = "/edit_rating" method = "POST">
                 BoardGame:<br>
-                <input type="text" name="boardgame"><br>
+                <input type="text" name="boardgame" value = "{{r[0]}}"><br>
                 Rating:<br>
-                <input type="number" name="rating">
-                <button type="button" name="update">Update</button><br>
-                <textarea id="review" rows="10" cols="80" name="review" form="reviewform">
-                Enter review here...
-                </textarea><br>
-                <button type="button" name="update">Update</button><br>
+                <input type="number" name="rating" value = "{{r[1]}}">
+                <button type="button" name="button" value = "update">Update</button>
                 <br>
-                <button type="button" name="delete">Delete Review</button>
+                <button type="button" name="button" value = "delete" onclick = "window.location = 'edit_rating'"
+                >Delete Rating</button>
             </form>  
        </div>
+       {% endfor %}
+    </body>
+</html>       
