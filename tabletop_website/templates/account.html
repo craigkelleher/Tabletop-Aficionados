@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <title>
+            Account
+        </title>
+        <meta charset="UTF-8">
+        <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
+            the webpage itself to be scaled for all device resolutions-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="menubar">
+            <a href = "index.html">Home</a>
+            <a href = "boardgames.html">Browse</a>
+            <a href = "users.html">User Sign Up</a>
+            <a href = "account.html">My Account</a>
+            <a href = "postgame.html">Post Game</a>
+            <a href = "login.html">Login</a>
+       </div> 
+       <div class = "header_account">
+        <h2>Account Information</h2>
+        <p>Your account information and reviews you made are here</p>
+       </div>
+       <br>
+       <div class="set">
+        <h2>Your Account:</h2>
+        <form id = "update_account" action = "/update_account" method = "POST">
+            <input type="hidden" name="user_id" value ="{{account[0]}}">
+            First Name:<br>
+            <input type = "text" name="firstname" value = "{{account[1]}}"><br>
+            Last Name:<br>
+            <input type = "text" name="lastname" value = "{{account[2]}}"><br>
+            Username:<br>
+            <input type="text" name="username" value = "{{account[4]}}"><br>
+            Email:<br>
+            <input type = "email" name="email" value = "{{account[3]}}"><br>
+            Pass:<br>
+            <input type = "password" name="password" value = "{{account[5]}}"><br>
+            <br>
+            <button type="button" name="update">Update</button><br>
+        </form>
+      </div> 
+      {% for r in ratings %}
+      <div class="set">
+            <h2>Your Reviews:</h2>
+            <form id="reviewform" action = "/edit_rating" method = "POST">
+                BoardGame:<br>
+                <input type="text" name="boardgame" value = "{{r[0]}}"><br>
+                Rating:<br>
+                <input type="number" name="rating" value = "{{r[1]}}">
+                <button type="button" name="button" value = "update">Update</button>
+                <br>
+                <button type="button" name="button" value = "delete" onclick = "window.location = 'edit_rating'"
+                >Delete Rating</button>
+            </form>  
+       </div>
+       {% endfor %}
+    </body>
+</html>       
