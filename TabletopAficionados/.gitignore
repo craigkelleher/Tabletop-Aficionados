@@ -1,0 +1,12 @@
+venv/
+*.pyc
+*.pyo
+eggs/
+develop-eggs/
+*.egg-info/
+*.egg
+.installed.cfg
+
+db.txt
+db.txt
+.vscode/
