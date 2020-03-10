@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <title>
+            Users Page
+        </title>
+        <meta charset="UTF-8">
+        <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
+            the webpage itself to be scaled for all device resolutions-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="menubar">
+            <a href = "index.html">Home</a>
+            <a href = "boardgames.html">Browse</a>
+            <a href = "users.html">User Sign Up</a>
+            <a href = "account.html">My Account</a>
+            <a href = "postgame.html">Post Game</a>
+            <a href = "login.html">Login</a>
+       </div> 
+       <div class = "header_search">
+           <h1>BOARDGAMES INFORMATION</h1>
+           <p>Here you can view the reviews and information associated with the 
+               tabletop game you searched for.
+           </p>
+       </div>
+       <br>
+       <div class="setA">
+        <h2>Boardgame Information:</h2>
+        <form id="boardgameform">
+            Boardgame Name:<br>
+            <input type = "text" name="boardgamename" value = "{{game[0]}}"><br>
+            Designer First Name:<br>
+            <input type="text" name="designerFN" value = "{{game[1]}}"><br>
+            Designer Last Name:<br>
+            <input type="text" name="designerLN" value = "{{game[2]}}"><br>
+            Publisher:<br>
+            <input type="text" name="publisher" value = "{{game[3]}}"><br>
+            Release Date:<br>
+            <input type="date" name="releasedate" value = "{{game[4]}}"><br>
+            Genre:<br>
+            <select name="genres">
+                <option value="family">Family</option>
+                <option value="dexterity">Dexterity</option>
+                <option value="party">Party</option>
+                <option value="abstract">Abstracts</option>
+                <option value="thematic">Thematic</option>
+                <option value="eurogames">Eurogames</option>
+                <option value="wargames">Wargames</option>
+            </select><br>
+            Description:<br>
+            <textarea id="description" rows="10" cols="80" name="description" form="boardgameform">
+                Enter description here...
+            </textarea><br>    
+            Rating:<br>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span> 
+        </form>
+        <br/>
+        <form action="reviews.html">
+            <button type="submit">Write Review</button>
+        </form>
+      </div>
+      <br>
+      <div class="setA">
+          <h2>Reviews:</h2>
+          <label for="userReviews">Username</label><br>
+          <br>
+          Rating:<br>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span> <br>
+            <br>
+            <br>
+          <textarea id="review" rows="10" cols="80">
+              Here is a preview how the reviews will displayed as.
+          </textarea>
+      </div>
+    </body>
+</html>    
