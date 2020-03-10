@@ -5,9 +5,8 @@ webapp = Flask(__name__)
 
 @webapp.route('/')
 def home():
-    return render_template(
-        "index.html",
-    )
+    return render_template('index.html')
+
 
 
 @webapp.route('/login', methods = ['GET', 'POST'])
@@ -114,7 +113,7 @@ def update_accountdata():
         account_result = execute_query(db_connection, query, data).fetchone()
         if result == None:
           return "No such account found!"
-        return render_template('account.html', account = account_result)  
+        return render_template('templates.account.html', account = account_result)  
   elif request.method == 'POST':
         user_id = request.form['user_id']
         user_first = request.form['firstname'] 
