@@ -12,7 +12,7 @@ h1 {
   .header_home {
     padding: 70px; 
     text-align: center; 
-    background-image: url(chess.jpg); 
+    background-image: url(<img src="static/chess.jpg" alt="pic1"); 
     color: #0099ff;
   }
 
