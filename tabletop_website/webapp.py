@@ -1,26 +1,32 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask import request, redirect
 from db_connector.db_connector import connect_to_database, execute_query
-webapp=Flask(__name__)
+webapp = Flask(__name__)
+
+@webapp.route('/')
+def home():
+    return render_template('index.html')
+
+
 
 @webapp.route('/login', methods = ['GET', 'POST'])
 def login():
-      msg = 'Login error!'
-      if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-          username = request.form['username']
-          password = request.form['password']
+    msg = 'Login error!'
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
 
-          query = 'SELECT * FROM Users WHERE username = %s AND password = %s'
-          data = (username, password)
-          account = execute_query(db_connection, query, data).fetchone();
-          if account:
+        query = 'SELECT * FROM Users WHERE username = %s AND password = %s'
+        data = (username, password)
+        account = execute_query(db_connection, query, data).fetchone();
+        if account:
               session['loggedin'] = True
               session['id'] = account['userID']
               session['username'] = account['username']
               return 'Logged in!'
-          else:
+        else:
               msg = 'Incorrect login information: either your username or password'    
-      return render_template('login.html', msg = msg)
+        return render_template('login.html', msg=msg)
 
 @webapp.route('/logout')
 def logout():
@@ -107,7 +113,7 @@ def update_accountdata():
         account_result = execute_query(db_connection, query, data).fetchone()
         if result == None:
           return "No such account found!"
-        return render_template('account.html', account = account_result)  
+        return render_template('templates.account.html', account = account_result)  
   elif request.method == 'POST':
         user_id = request.form['user_id']
         user_first = request.form['firstname'] 
@@ -146,8 +152,4 @@ def update_ratingdata():
               query = 'DELETE FROM UsersBoardgames WHERE userID = %s'
               data = (session['id'])
               delete_result = execute_query(db_connection, query, data)  
-              return redirect(url_for('edit_rating'))    
-
-
-
-
+              return redirect(url_for('edit_rating'))

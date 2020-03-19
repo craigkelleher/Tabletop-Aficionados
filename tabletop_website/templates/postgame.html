@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang= "en">
-    <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type = "text/css"  href="{{ url_for('static', filename='style.css') }}">  
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
         <title>
             Boardgames Search Page
@@ -15,12 +14,12 @@
         <!--Ref:https://www.w3schools.com/howto/howto_website.asp; Horizontal navigation bar with links to other
             pages-->
         <div class="menubar">
-             <a href = "index.html">Home</a>
-             <a href = "boardgames.html">Browse</a>
-             <a href = "users.html">User Sign Up</a>
-             <a href = "account.html">My Account</a>
-             <a href = "postgame.html">Post Game</a>
-             <a href = "login.html">Login</a>
+             <a href = "/index">Home</a>
+             <a href = "/boardgames">Browse</a>
+             <a href = "/users">User Sign Up</a>
+             <a href = "/account">My Account</a>
+             <a href = "/postgame">Post Game</a>
+             <a href = "/login">Login</a>
         </div> 
         <div class = "header_post">
             <h2>POST BOARDGAME</h2>
