@@ -36,7 +36,8 @@ CREATE TABLE `Boardgames` (
   `publisherID` int(11) NOT NULL,
   `rating` int(11) DEFAULT NULL,
   `releaseDate` date DEFAULT NULL,
-  `genre` varchar(255) DEFAULT NULL
+  `genre` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
