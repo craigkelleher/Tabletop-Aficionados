@@ -29,7 +29,7 @@
             <h2>Boardgame to add:</h2>
                 <table border='1'>
                     <thead>
-                    	<form id="update_boardgame" action='/update_boardgame/{{ boardgames[0] }}' method = "post">
+                    	<form id="update_boardgame" action='/update_boardgames/{{ boardgames[0] }}' method = "post">
 
                     	<input type="hidden" name="boardgameID" value = "{{ boardgames[0] }}">
                         Boardgame Name: <input type="text" name = "boardgameName" value = "{{ boardgames[1] }}"> <br>
