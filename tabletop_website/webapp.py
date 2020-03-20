@@ -52,7 +52,7 @@ def update_boardgame(id):
 
         if boardgame_result == None:
             return "No such boardgame found"
-        publisher_query = 'SELECT publisherName, FROM PrimaryPublishers'
+        publisher_query = 'SELECT publisherName FROM PrimaryPublishers'
         publisher_result = execute_query(db_connection, publisher_query).fetchall();
         return render_template('boardgame_update.html', publisher = publisher_result, boardgames = boardgame_result)
     elif request.method == 'POST':
@@ -72,7 +72,7 @@ def update_boardgame(id):
 @webapp.route('/delete_boardgames/<int:id>')
 def delete_people(id):
     db_connection = connect_to_database()
-    query = "DELETE FROM boardgameName WHERE boardgameID = %s"
+    query = "DELETE FROM Boardgames WHERE boardgameID = %s"
     data = (id,)
 
     result = execute_query(db_connection, query, data)
