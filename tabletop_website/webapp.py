@@ -66,7 +66,7 @@ def update_boardgame(id):
         query = 'UPDATE Boardgames SET boardgameName =%s, releaseDate = %s, genre = %s WHERE boardgameID = %s'
         data = (boardgameName, releaseDate, genre, boardgameID)
         result = execute_query(db_connection, query, data)
-        print(str(result.rowcount) + " row9s) updated");
+        print(str(result.rowcount) + " rows) updated");
         return redirect('browse_boardgames')
 
 @webapp.route('/delete_boardgames/<int:id>')
@@ -76,4 +76,4 @@ def delete_people(id):
     data = (id,)
 
     result = execute_query(db_connection, query, data)
-    return (str(result.rowcount) + "row deleted")
+    return redirect('browse_boardgames')
