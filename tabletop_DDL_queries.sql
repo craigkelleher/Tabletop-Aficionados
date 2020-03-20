@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `Boardgames`
 --
-
+--This is to create the table boardgames in the database
 DROP TABLE IF EXISTS `Boardgames`;
 CREATE TABLE `Boardgames` (
   `boardgameID` int(11) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `Boardgames` (
 --
 -- Dumping data for table `Boardgames`
 --
-
+-- This is to insert boardgame and related data into the database
 INSERT INTO `Boardgames` (`boardgameID`, `boardgameName`, `designerFirstName`, `designerLastName`, `publisherName`, `rating`, `releaseDate`, `genre`, `description`) VALUES
 (1, 'Azul', 'Emmnaul', 'Price', 'CoolGames', 8, '2020-03-25', 'Family', 'A silly game for the whole family'),
 (2, 'Pandemic', 'Matt', 'Leacock', 'Zman Games', 7, '2019-07-15', 'Medical', 'In Pandemic, several virulent diseases have broken out simultaneously all over the world! The players are disease-fighting specialists whose mission is to treat disease hotspots while researching cures for each of four plagues before they get out of hand.'),
@@ -57,6 +57,7 @@ INSERT INTO `Boardgames` (`boardgameID`, `boardgameName`, `designerFirstName`, `
 -- Table structure for table `PrimaryDesigners`
 --
 
+--create the primaryDesigners table and drop it if it already exists
 DROP TABLE IF EXISTS `PrimaryDesigners`;
 CREATE TABLE `PrimaryDesigners` (
   `designerID` int(11) NOT NULL,
@@ -67,7 +68,7 @@ CREATE TABLE `PrimaryDesigners` (
 --
 -- Dumping data for table `PrimaryDesigners`
 --
-
+-- Insert into the table PrimaryDesigners
 INSERT INTO `PrimaryDesigners` (`designerID`, `designerFirstName`, `designerLastName`) VALUES
 (1, 'Philippe', 'Guérin'),
 (2, 'Chris', 'Quilliams');
@@ -78,6 +79,7 @@ INSERT INTO `PrimaryDesigners` (`designerID`, `designerFirstName`, `designerLast
 -- Table structure for table `PrimaryPublishers`
 --
 
+--Create table and or drop it if already exists for PrimaryPublishers
 DROP TABLE IF EXISTS `PrimaryPublishers`;
 CREATE TABLE `PrimaryPublishers` (
   `publisherID` int(11) NOT NULL,
@@ -89,55 +91,14 @@ CREATE TABLE `PrimaryPublishers` (
 --
 -- Dumping data for table `PrimaryPublishers`
 --
-
+--Insert into the primary publishers Table a provisionary publisher
 INSERT INTO `PrimaryPublishers` (`publisherID`, `publisherName`, `gamesPublished`, `yearEstablished`) VALUES
 (1, 'Plan B Games', 15, 2016);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Users`
---
-
-#DROP TABLE IF EXISTS `Users`;
-#CREATE TABLE `Users` (
-#  `userID` int(11) NOT NULL,
-#  `userFirstName` varchar(255) NOT NULL,
-#  `userLastName` varchar(255) NOT NULL,
-#  `email` varchar(255) NOT NULL
-#) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `Users`
---
-
-#INSERT INTO `Users` (`userID`, `userFirstName`, `userLastName`, `email`) VALUES
-#(1, 'Craig', 'Kelleher', 'kellehec@oregonstate.edu'),
-#(3, 'Patrick', 'Oh', 'ohp@oregonstate.edu'),
-#(4, 'Novia', 'Dela Rosa', 'delarosanovia@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `UsersBoardgames`
---
-
-#DROP TABLE IF EXISTS `UsersBoardgames`;
-#CREATE TABLE `UsersBoardgames` (
-#  `userID` int(11) NOT NULL,
-#  `boardgameID` int(11) NOT NULL
-#) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `UsersBoardgames`
---
-
-#INSERT INTO `UsersBoardgames` (`userID`, `boardgameID`) VALUES
-#(1, 1);
-
--- Table structure for table `UsersBoardgames`
---
-
+--Create the table for Primary Publishers and Primary designers intersection table to handle the M:M relationship
 DROP TABLE IF EXISTS `PrimaryPublishersPrimaryDesigners`;
 CREATE TABLE `PrimaryPublishersPrimaryDesigners` (
   `publisherID` int(11) NOT NULL DEFAULT '0',
@@ -147,102 +108,45 @@ CREATE TABLE `PrimaryPublishersPrimaryDesigners` (
 -- Dumping data for table `UsersBoardgames`
 --
 
+--Insert provisionary info into the intersection table
 INSERT INTO `PrimaryPublishersPrimaryDesigners` (`publisherID`, `designerID`) VALUES
 (1, 1);
 
 --
--- Indexes for dumped tables
---
-
---
 -- Indexes for table `Boardgames`
---
+--Add primary key for Boardgames
 ALTER TABLE `Boardgames`
   ADD PRIMARY KEY (`boardgameID`);
 
 --
 -- Indexes for table `PrimaryDesigners`
 --
+-- add primary key to primaryDesigners
 ALTER TABLE `PrimaryDesigners`
   ADD PRIMARY KEY (`designerID`);
 
 --
 -- Indexes for table `PrimaryPublishers`
---
+--Add primary key to PrimaryPublishers
 ALTER TABLE `PrimaryPublishers`
   ADD PRIMARY KEY (`publisherID`);
-
-#ALTER TABLE `PrimaryPublishersPrimaryDesigners`
-#  ADD PRIMARY KEY (`publisherID`,`designerID`);
-
---
--- Indexes for table `Users`
---
-#ALTER TABLE `Users`
-#  ADD PRIMARY KEY (`userID`);
-
---
--- Indexes for table `UsersBoardgames`
---
-#ALTER TABLE `UsersBoardgames`
-#  ADD PRIMARY KEY (`userID`,`boardgameID`),
-#  ADD KEY `boardgameID` (`boardgameID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
 
 --
 -- AUTO_INCREMENT for table `Boardgames`
 --
+--modify boardgames table to add restrictions, auto increments
 ALTER TABLE `Boardgames`
   MODIFY `boardgameID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `PrimaryDesigners`
---
+--modify primarydesigners table to add restrictions, auto increments
 ALTER TABLE `PrimaryDesigners`
   MODIFY `designerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `PrimaryPublishers`
---
+--modify primarypublishers table to add restrictions, auto increments
 ALTER TABLE `PrimaryPublishers`
   MODIFY `publisherID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- AUTO_INCREMENT for table `Users`
---
-#ALTER TABLE `Users`
-#  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `Boardgames`
---
-#ALTER TABLE `Boardgames`
-#  ADD CONSTRAINT `Boardgames_ibfk_1` FOREIGN KEY (`designerID`) REFERENCES `PrimaryDesigners` (`designerID`),
-#  ADD CONSTRAINT `Boardgames_ibfk_2` FOREIGN KEY (`publisherID`) REFERENCES `PrimaryPublishers` (`publisherID`);
-
-
-#ALTER TABLE 'PrimaryPublishersPrimaryDesigners'
-#  ADD CONSTRAINT `PrimaryPublishersPrimaryDesigners_ibfk_1` FOREIGN KEY (`designerID`) REFERENCES `PrimaryDesigners` (`designerID`),
-#  ADD CONSTRAINT `PrimaryPublishersPrimaryDesigners_ibfk_2` FOREIGN KEY (`publisherID`) REFERENCES `PrimaryPublishers` (`publisherID`),
-#COMMIT;
--- Constraints for table `UsersBoardgames`
---
-#ALTER TABLE `UsersBoardgames`
-#  ADD CONSTRAINT `UsersBoardgames_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `Users` (`userID`),
-#  ADD CONSTRAINT `UsersBoardgames_ibfk_3` FOREIGN KEY (`boardgameID`) REFERENCES `Boardgames` (`boardgameID`) ON DELETE CASCADE;
-#COMMIT;
-
-
-
-
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
