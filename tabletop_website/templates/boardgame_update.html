@@ -29,13 +29,13 @@
             <h2>Boardgame to add:</h2>
                 <table border='1'>
                     <thead>
-                    	<form id="update_boardgame" action='/update_boardgame/{{ boardgame[0] }}' method = "post">
+                    	<form id="update_boardgame" action='/update_boardgame/{{ boardgames[0] }}' method = "post">
 
-                    	<input type="hidden" name="boardgameID" value = "{{ boardgame[0] }}">
-                        Boardgame Name: <input type="text" name = "boardgameName" value = "{{ boardgame[1] }}"> <br>
-                    	Rating: <input type="number" name="rating" value = "{{ boardgame[2] }}" ><br>
-                    	Release Date: <input type="number" name="releaseDate"><br>
-                    	genre: <input type ="text" name="genre" value = "{{ boardgame[3] }}"><br>
+                    	<input type="hidden" name="boardgameID" value = "{{ boardgames[0] }}">
+                        Boardgame Name: <input type="text" name = "boardgameName" value = "{{ boardgames[1] }}"> <br>
+                    	Rating: <input type="number" name="rating" value = "{{ boardgames[2] }}" ><br>
+                    	Release Date: <input type="date" name="releaseDate"><br>
+                    	genre: <input type ="text" name="genre" value = "{{ boardgames[3] }}"><br>
                     		<input type = "submit" value = "Submit">
                     	</form>
                     </thead>
