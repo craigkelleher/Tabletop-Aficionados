@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" type = "text/css"  href="{{ url_for('static', filename='style.css') }}">        
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <title>
+            Add a new Boardgame!
+        </title>
+        <meta charset="UTF-8">
+        <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
+            the webpage itself to be scaled for all device resolutions-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+                <div class="menubar">
+             <a href = "/">Home</a>
+             <a href = "/browse_boardgames">Browse</a>
+             <a href = "/add_new_boardgames">Post Game</a>
+        </div> 
+        <!--Ref:https://www.w3schools.com/howto/howto_website.asp; Horizontal navigation bar with links to other
+            pages-->
+
+        <div class = "header_search">
+            <h2>Add a new Boardgame!</h2>
+
+        </div>
+        <br/>
+        <div class="setA">
+            <h2>Boardgame to add:</h2>
+                <table border='1'>
+                    <thead>
+                    	<form id="addboardgame" action='/add_new_boardgames' method = "post">
+                    		Boardgame Name: <input type="text" name="boardgameName"><br>
+                            Designer's First name <input type="text" name="designerFirstName"><br>
+                            Designer's Last Name <input type="text" name="designerLastName"><br>
+                            Publisher's Name <input type ="text" name="publisherName"><br>
+                    		Release Date: <input type="date" name="releaseDate"><br>
+                    		Genre: <input type = "text" name="genre"><br>
+                            Description: <input type = "text" name = "description"><br>
+                    		<input type = "submit" value = "Submit">
+                    	</form>
+                    </thead>
+                </table>
+        </div>
+    </body>    
+</html>
