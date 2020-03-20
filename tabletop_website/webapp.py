@@ -34,13 +34,18 @@ def insert_gamedata():
         releaseDate = request.form['releaseDate']
         genre = request.form['genre']
         description = request.form['description']
+
         query_game= 'INSERT INTO Boardgames(boardgameName, releaseDate, genre) VALUES(%s, %s, %s)'
         data_game = (boardgameName, releaseDate, genre)
+        execute_query(db_connection, query_game, data_game)
+
         query_publisher = 'INSERT INTO PrimaryPublishers(publisherName) VALUES(%s)'
         data_publisher = (publisherName)
+        execute_query(db_connection, query_publisher, data_publisher)
+
         query_designer = 'INSERT INTO PrimaryDesigners(designerFirstName, designerLastName) VALUES(%s, %s)'
         data_designer = (designerFirstName, designerLastName)
-        execute_query(db_connection, query, data)
+        execute_query(db_connection, query_designer, data_designer)
         return redirect('browse_boardgames')
 
 @webapp.route('/update_boardgames/<int:id>', methods=['POST','GET'])
