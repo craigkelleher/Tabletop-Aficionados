@@ -1,1 +1,43 @@
-boardgames_add_new.html
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" type = "text/css"  href="{{ url_for('static', filename='style.css') }}">        
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <title>
+            Add new boardgames!
+        </title>
+        <meta charset="UTF-8">
+        <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
+            the webpage itself to be scaled for all device resolutions-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+                <div class="menubar">
+             <a href = "/">Home</a>
+             <a href = "/browse_boardgames">Browse</a>
+             <a href = "/add_new_boardgames">Post Game</a>
+        </div> 
+        <!--Ref:https://www.w3schools.com/howto/howto_website.asp; Horizontal navigation bar with links to other
+            pages-->
+
+        <div class = "header_search">
+            <h2>Add new boardgames!</h2>
+
+        </div>
+        <br/>
+        <div class="setA">
+            <h2>Boardgame to add:</h2>
+                <table border='1'>
+                    <thead>
+                    	<form id="addboardgame" action='/add_new_boardgames' method = "post">
+                    		Boardgame Name: <input type="text" name="boardgameName"><br>
+                    		Rating: <input type = "number" name="rating"><br>
+                    		Release Date: <input type="date" name="releaseDate"><br>
+                    		genre: <input type = "text" name="genre"><br>
+                    		<input type = "submit" value = "Submit">
+                    	</form>
+                    </thead>
+                </table>
+        </div>
+    </body>    
+</html>
