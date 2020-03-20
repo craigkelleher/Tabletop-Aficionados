@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang= "en">
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type = "text/css"  href="{{ url_for('static', filename='style.css') }}">        
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
         <title>
-            Boardgames Search Page
+            Browse Boardgames Page
         </title>
         <meta charset="UTF-8">
         <!--Referenced: https://www.w3schools.com/howto/howto_website.asp; Here the meta method is set for
@@ -15,52 +15,38 @@
         <!--Ref:https://www.w3schools.com/howto/howto_website.asp; Horizontal navigation bar with links to other
             pages-->
         <div class="menubar">
-             <a href = "/index">Home</a>
-             <a href = "/boardgames">Browse</a>
-             <a href = "/users">User Sign Up</a>
-             <a href = "/account">My Account</a>
-             <a href = "/postgame">Post Game</a>
-             <a href = "/login">Login</a>
+             <a href = "/">Home</a>
+             <a href = "/browse_boardgames">Browse</a>
+             <a href = "/add_new_boardgames">Post Game</a>
         </div> 
         <div class = "header_search">
-            <h2>BOARDGAMES SEARCH</h2>
-            <p>Search for your favorite tabletop game and the information/reviews associated with it!</p>
+            <h2>Browse Boardgames</h2>
+            <p>Browse for your favorite tabletop games!</p>
         </div>
         <br/>
         <div class="setA">
-            <h2>Boardgame Filters:</h2>
-            <form id = "game_search" action="/add_boardgames" method = "GET">
-                Boardgame Name:<br>
-                <input type="text" name="boardgamename"><br>
-                <br>
-                Designer First Name:<br>
-                <input type="text" name="designerFN"><br>
-                <br>
-                Designer Last Name:<br>
-                <input type="text" name="designerLN"><br>
-                <br>
-                Publisher:<br>
-                <input type="text" name="publisher"><br>
-                <br>
-                Release Date:<br>
-                <input type="date" name="releasedate"><br>
-                <br>
-                Genre:<br>
-                <select name="genres">
-                    <option value="family">Family</option>
-                    <option value="dexterity">Dexterity</option>
-                    <option value="party">Party</option>
-                    <option value="abstract">Abstracts</option>
-                    <option value="thematic">Thematic</option>
-                    <option value="eurogames">Eurogames</option>
-                    <option value="wargames">Wargames</option>
-                </select> 
-                <br>
-                <br>
-                <button type="submit">Search</button>
-                <br>
-                <br>   
-            </form>
+            <h2>Current Boardgames:</h2>
+                <table border='1'>
+                    <thead>
+                        <th>Boardgame Name</th>
+                        <th>Rating</th>
+                        <th>Release Date</th>
+                        <th>Genre</th>
+                    </thead>
+                    <tbody>
+                        {% for r in rows %}
+                    <tr>
+                        <td> {{ r.0 }}</td>
+                        <td> {{ r[1] }}</td>
+                        <td> {{ r[2] }}</td>
+                        <td> {{ r[3] }}</td>
+                        <td> <input type='button' name='Update' value='Update' onclick="window.location = '/update_boardgames/{{r[4]}}'"> </td>
+                        <td> <input type='button' name='Delete' value='Delete' onclick="window.location = '/delete_boardgames/{{r[4]}}'"> </td>
+                    </tr>
+                     {% endfor %}
+                 </tbody>
+                </table>
+                            <h3><a href='/add_new_boardgames'> Add new boardgames</a></h3>
         </div>
     </body>    
 </html>
