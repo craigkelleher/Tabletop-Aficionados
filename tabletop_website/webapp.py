@@ -19,9 +19,15 @@ def browse_people():
 @webapp.route('/add_new_boardgames', methods = ['GET','POST'])
 def insert_gamedata():
     db_connection = connect_to_database()  
-    if request.method == 'POST':
+    if request.method == 'GET':
+        query = 'SELECT boardgameID, boardgameName FROM Boardgames'
+        result = execute_query(db_connection, query).fetchall();
+        print(result)
+        return render_template('boardgames_add_new.html', boardgames = result)
+
+    elif request.method == 'POST':
         print("Add new boardgames!");
-        boardgame_name = request.form['boardgameName']
+        boardgameName = request.form['boardgameName']
         designerFirstName = request.form['designerFirstName']
         designerLastName = request.form['designerLastName']
         publisherName = request.form['publisherName']
@@ -34,14 +40,8 @@ def insert_gamedata():
         data_publisher = (publisherName)
         query_designer = 'INSERT INTO PrimaryDesigners(designerFirstName, designerLastName) VALUES(%s, %s)'
         data_designer = (designerFirstName, designerLastName)
-        execute_query(db_connection, query_game, data_game, query_publisher, data_publisher, query_designer, data_designer)
-        return ('Board game added!');
-    elif request.method == 'GET':
-        query = 'SELECT boardgameID, boardgameName FROM Boardgames'
-        result = execute_query(db_connection, query).fetchall();
-        print(result)
-        return render_template('boardgames_add_new.html', boardgames = result)
-        return render_template('tabletopinfo.html', game = result)  
+        execute_query(db_connection, query, data)
+        return redirect('browse_boardgames')
 
 @webapp.route('/update_boardgames/<int:id>', methods=['POST','GET'])
 def update_boardgame(id):
