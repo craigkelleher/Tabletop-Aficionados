@@ -213,6 +213,7 @@ ALTER TABLE `Boardgames`
 ALTER TABLE `UsersBoardgames`
   ADD CONSTRAINT `UsersBoardgames_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `Users` (`userID`),
   ADD CONSTRAINT `UsersBoardgames_ibfk_2` FOREIGN KEY (`boardgameID`) REFERENCES `Boardgames` (`boardgameID`);
+  ADD CONSTRAINT `UsersBoardgames_ibfk_2` FOREIGN KEY (`boardgameID`) REFERENCES `UsersBoardgames` (`boardgameID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
