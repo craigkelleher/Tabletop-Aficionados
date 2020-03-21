@@ -1,4 +1,4 @@
-host = 'classmysql.engr.oregonstate.edu'  #DON'T CHANGE ME UNLESS THE INSTRUCTIONS SAY SO
-user = 'cs340_kellehec' #CHANGE ME
-passwd = '0127' #CHANGE ME
-db = 'cs340_kellehec' #CHANGE ME
+host = '#CHANGE ME'  #DON'T CHANGE ME UNLESS THE INSTRUCTIONS SAY SO
+user = '#CHANGE ME' #CHANGE ME
+passwd = '#CHANGE ME' #CHANGE ME
+db = '#CHANGE ME' #CHANGE ME
